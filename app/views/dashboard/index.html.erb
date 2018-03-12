@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <h1 class="header-top-margin">Dashboard <%= @user.email %></h1>
+      <div class="dashboard-card">
+        <div class="space-card-content">
+          <% if @my_bookings.blank? %>
+            <p>You still don't have any bookings.
+            <%= link_to "Search for a nice place", spaces_path %></p>
+          <% else %>
+            <h3>Bookings I made:</h3>
+            <% @my_bookings.each do |booking| %>
+              <p><%= booking.space.name %> at <strong><%= booking.date %></strong></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- Col -->
+
+    <div class="col-12 col-lg-8">
+      <% if @spaces.blank? %>
+        <p></p>
+      <% else %>
+        <h1 class="header-top-margin">The list of your spaces</h1>
+        <% @spaces.each do |space| %>
+          <div class="row dashboard-card">
+            <div class="col-12 col-lg-4">
+              <div class="space-card-owner-image rounded" style="background-image: url(<%= cl_image_path space.photo %>);">
+              </div>
+            </div>
+            <div class="col-12 col-lg-8">
+              <div class="dashboard-content">
+                <%= link_to space.name, space_path(space), class: "btn btn-primary" %>
+                <%= link_to "Edit my space", edit_space_path(space.id), class: "btn btn-primary" %>
+                <% if space.bookings.blank? %>
+                  <h3 class="header-top-margin">No bookings yet</h3>
+                <% else %>
+                  <h3 class="header-top-margin">Bookings for this space:</h3>
+                <% end %>
+                <% space.bookings.each do |booking| %>
+                  <div class="row dashboard-booking-margin">
+                    <div class="col-12 col-md-6">
+                      <strong><%= l(booking.date, format: :long) %></strong> by <%= booking.user.email %> -
+                      <% if booking.pending? %>
+                        <span class="text-danger">Pending: </span><i class="far fa-question-circle text-danger"></i>&nbsp;&nbsp;&nbsp;
+                      <% elsif booking.approved? %>
+                        <span class="text-success">Approved: </span><i class="far fa-check-circle text-success"></i>&nbsp;&nbsp;&nbsp;
+                      <% elsif booking.declined? %>
+                        <span class="text-primary">Declined:&nbsp;&nbsp;&nbsp;</span><i class="fas fa-ban text-primary"></i>&nbsp;&nbsp;&nbsp;
+                      <% end %>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <%= link_to "Approve", booking_path(booking, status: "approved"), class: "btn btn-sm btn-success", method: :patch %> -
+                      <%= link_to "Decline", booking_path(booking, status: "declined"), class: "btn btn-sm btn-primary", method: :patch  %>
+                    </div>
+                    <hr>
+                  </div>
+                <% end %> <!-- each.do booking -->
+              </div> <!-- Card content -->
+            </div> <!-- Col -->
+         </div> <!-- row -->
+        <% end %> <!-- each do space -->
+      <% end %> <!-- spaces blank -->
+    </div> <!-- Col -->
+  </div> <!-- row -->
+</div> <!-- container -->

@@ -1,0 +1,14 @@
+
+<div class="banner d-flex" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://spmodels.net/malacca/wp-content/uploads/2016/01/Event-Management-service-AnnualDinner.jpg');">
+  <div class="banner-content">
+    <h1>Find the perfect location for your event</h1>
+    <div class="form-inline justify-content-center">
+      <%= form_tag(spaces_path, method: :get) do %>
+        <%= text_field_tag :address, params[:address], placeholder: "type in a city", class: "form-control form-control-lg form-fields" %>
+        <%= submit_tag 'Start', class: "btn btn-primary btn-lg form-fields" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

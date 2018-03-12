@@ -1,0 +1,17 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+// @import "bootstrap-sprockets"; // Commented out to make Bootstrap 4 work
+@import "bootstrap";
+// @import "font-awesome-sprockets"; // Commented out to make Bootstrap 4 work
+// @import "font-awesome";
+@import 'font_awesome5';
+
+// Your CSS partials
+@import "layouts/index";
+@import "components/index";
+@import "pages/index";
+

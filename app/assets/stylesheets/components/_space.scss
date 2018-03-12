@@ -1,0 +1,98 @@
+.filter-bar {
+  margin-top: 40px;
+}
+
+.form-fields {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+a.animated-button {
+  border: 2px solid #D24D57;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+a.animated-button:after {
+  background: $purple;
+  opacity: .5;
+  -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+a.animated-button:hover:after {
+  opacity: 1;
+  height: 600% !important;
+}
+
+.banner-space-img {
+  height: 60vh;
+  position: relative;
+  background-size: cover !important;
+}
+
+.banner-lower-left {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
+.background-space-info {
+  background-color: white;
+  margin-top: 30px;
+  padding: 10px 30px 20px 30px;
+}
+
+.space-card-header {
+  margin-left: 20px;
+}
+
+.space-card {
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  transition: 0.2s;
+  // height: 400px;
+}
+
+.space-card:hover {
+  box-shadow: 8px 8px 8px 0 rgba(0,0,0,0.2);
+}
+
+.space-card-image {
+  width: 100%;
+  padding-top: 56.25%;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.space-card-content {
+  padding: 10px 16px 5px 16px;
+}
+
+.space-card-price {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.space-card-content h4 {
+  font-size: 1em;
+}
+
+.space-card-content h2 {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.space-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 20;
+  background: gray;
+  opacity: 0;
+}
