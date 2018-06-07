@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Project has moved to GitLab!
+
+Bootcamp project refactored to Bootstrap 4 and fontawesome 5
